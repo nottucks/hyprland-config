@@ -1,7 +1,7 @@
 @import url("colors.css");
 
 * {
-    font-family: 'SF Pro Text', sans-serif;
+    font-family: 'JetBrainsMonoNerdFont', 'SF Pro Text', sans-serif;
     font-weight: bold;
     font-size: 12px;
     border-radius: 10px;
@@ -27,15 +27,15 @@ color: @on_surface_variant;
 
 #workspaces {
     background-color: @surface_container_low;
-    margin-left: 6px;
+    margin-left: 2px;
 }
 
 .modules-left {
-    margin-left: 8px;
+    margin-left: 2px;
 }
 
 .modules-right {
-    margin-right: 8px;
+    margin-right: 2px;
 }
 
 #battery,
@@ -44,25 +44,31 @@ color: @on_surface_variant;
 #backlight {
     color: @primary;
     background-color: @surface_container_high;
-    margin: 0 6px 0 6px;
-    padding: 0 15px 0 15px; /* top, right, bottom, left */
+    margin: 0 2px 0 2px;
+    padding: 0 4px 0 4px; /* top, right, bottom, left */
 }
 
 #clock {
     color: @secondary;
     background-color: @surface_container_high;
-    margin: 0 6px 0 0;
-    padding: 0 15px 0 15px;
+    margin: 0 2px 0 2px;
+    padding: 0 8px 0 8px;
 }
 
 #network {
     color: @primary;
+    margin: 0 2px 0 2px;
+    padding: 0 8px 0 8px;
 }
 
 #pulseaudio {
     color: @primary;
+    margin: 0 2px 0 2px;
+    padding: 0 8px 0 8px;
 }
 
 #backlight {
     color: @primary;
+    margin: 0 2px 0 2px;
+    padding: 0 8px 0 8px;
 }
