@@ -5,4 +5,6 @@ eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/zen.toml)"
 
 
 # run package manager binaries
-export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="/usr/lib/ccache/bin/:$PATH"
+export PATH=$PATH:~/.cargo/bin/
+export PATH=$PATH:~/.local/bin/

@@ -1,23 +1,17 @@
-# XDG
-export XDG_SESSION_TYPE=wayland
+# ######## Toolkit backends ########
+export GDK_BACKEND='wayland,x11'
+export QT_QPA_PLATFORM='wayland;xcb'
+export SDL_VIDEODRIVER='wayland,x11'
+export CLUTTER_BACKEND='wayland'
+export ELECTRON_OZONE_PLATFORM_HINT='auto'
+
+# ####### XDG specifications #######
 export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_SESSION_TYPE=wayland
 export XDG_SESSION_DESKTOP=Hyprland
 
-# tooling
-export GDK_BACKEND="wayland,x11,*"
-export QT_QPA_PLATFORM="wayland;xcb"
-export SDL_VIDEODRIVER=wayland
-export CLUTTER_BACKEND=wayland
+# ############# Others #############
+export _JAVA_AWT_WM_NONREPARENTING=1
 
-# app settings
-export MOZ_ENABLE_WAYLAND=1
-export ELECTRON_OZONE_PLATFORM_HINT=auto
-
-# theming
-export QT_QPA_PLATFORMTHEME=qt6ct
-export XCURSOR_SIZE=24
-export HYPRCURSOR_SIZE=24
-
-# scaling
-export GDK_SCALE=1
-export QT_AUTO_SCREEN_SCALE_FACTOR=1
+# igpu over dgpu for hyprland
+export AQ_DRM_DEVICES="/dev/dri/card1:/dev/dri/card0"
