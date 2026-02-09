@@ -2,6 +2,7 @@
     "layer": "top",
     "position": "top",
     "modules-left": ["clock", "hyprland/workspaces"],
+    "modules-middle":["hyprland/window"],
     "modules-right": ["pulseaudio", "battery", "network", "backlight"],
 
     "battery": {
@@ -60,7 +61,11 @@
         },
         "sort-by-number": true
     },
-
+    "hyprland/window": {
+        "format": "󱂬 {title}",
+        "separate-outputs": true,
+        "max-length": 50,
+    },
     "backlight": {
         "device": "",
         "format": "{icon}   {percent}%",
