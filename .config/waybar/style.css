@@ -3,7 +3,7 @@
 * {
     font-family: 'JetBrainsMonoNerdFont', 'SF Pro Text', sans-serif;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 10px;
     border-radius: 10px;
     margin-top:0px;
     margin-bottom: 0px;
@@ -13,22 +13,28 @@ window#waybar {
     background-color: alpha(@background, 0.7);
     color: @on_background;
     border-radius: 0px;
-    min-height:24px;
+    min-height:12px;
+}
+
+#workspaces {
+    background-color: @surface_container_low;
+    margin: 1px 2px;
+    border-radius: 10px;
+    padding: 0px;
 }
 
 #workspaces button {
-background-color: transparent;
-color: @on_surface_variant;
+    background-color: transparent;
+    color: @on_surface_variant;
+    padding: 0 8px;
+    margin: 0px;
+    border-radius: 10px;
+    min-height: 0;
 }
 
 #workspaces button.active {
     background-color: @tertiary;
     color: @on_tertiary;
-}
-
-#workspaces {
-    background-color: @surface_container_low;
-    margin-left: 2px;
 }
 
 .modules-left {
@@ -40,11 +46,11 @@ color: @on_surface_variant;
 }
 
 #window {
-background-color: @surface_container_high;
-color: @primary;
-padding: 0 10px;
-margin: 1px 0;
-border-radius: 10px;
+    background-color: @surface_container_high;
+    color: @primary;
+    padding: 0 10px;
+    margin: 1px 0;
+    border-radius: 10px;
 }
 
 window#waybar.empty #window {
@@ -57,31 +63,17 @@ window#waybar.empty #window {
 #backlight {
     color: @primary;
     background-color: @surface_container_high;
-    margin: 0 2px 0 2px;
-    padding: 0 4px 0 4px; /* top, right, bottom, left */
+    margin: 1px 1px 1px 1px;
+    padding: 0 4px 0 4px;
 }
 
 #clock {
     color: @secondary;
     background-color: @surface_container_high;
-    margin: 0 2px 0 2px;
-    padding: 0 8px 0 8px;
-}
-
-#network {
-    color: @primary;
-    margin: 0 2px 0 2px;
-    padding: 0 8px 0 8px;
-}
-
-#pulseaudio {
-    color: @primary;
-    margin: 0 2px 0 2px;
+    margin: 1px 2px 1px 2px;
     padding: 0 8px 0 8px;
 }
 
 #backlight {
-    color: @primary;
-    margin: 0 2px 0 2px;
-    padding: 0 8px 0 8px;
+    margin: 0px 0px 0px 1px;
 }
