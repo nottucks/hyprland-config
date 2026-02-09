@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "modules-left": ["clock", "hyprland/workspaces"],
-    "modules-middle":["hyprland/window"],
+    "modules-center": ["hyprland/window"],
     "modules-right": ["pulseaudio", "battery", "network", "backlight"],
 
     "battery": {
@@ -35,7 +35,6 @@
     },
 
     "network": {
-        "interface": "enp8s0f4u1u1",
         "format": "{ifname}",
         "format-wifi": "{icon}   {essid}",
         "format-ethernet": "󰈀   {ipaddr}/{cidr}",
@@ -64,7 +63,7 @@
     "hyprland/window": {
         "format": "󱂬 {title}",
         "separate-outputs": true,
-        "max-length": 50,
+        "max-length": 75,
     },
     "backlight": {
         "device": "",
