@@ -1,21 +1,41 @@
 {
     "layer": "top",
     "position": "top",
-    "modules-left": ["clock", "hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "battery", "network", "backlight"],
-
+    "modules-left": [
+        "clock",
+        "hyprland/workspaces",
+        "mpris"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "cava",
+        "pulseaudio",
+        "battery",
+        "network",
+        "backlight"
+    ],
     "battery": {
         "format": "{icon}  {capacity}%",
         "format-charging": "󰂄  {capacity}%",
-        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "format-icons": [
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ],
     },
-
     "clock": {
         // "format": "󰥔   {:%I:%M %p}",
         "format": "󰥔   {:%a, %b %d - %I:%M %p}",
     },
-
     "pulseaudio": {
         "format": "{icon}  {volume}%",
         "format-bluetooth": "󰂱  {volume}%",
@@ -23,26 +43,35 @@
         "scroll-step": 1,
         "on-click": "pavucontrol",
         "format-icons": {
-        "ignored-sinks": ["Easy Effects Sink"],
+            "ignored-sinks": [
+                "Easy Effects Sink"
+            ],
             "headphone": "",
             "hands-free": "",
             "headset": "󰋎",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["󰖀", "󰕾"]
+            "default": [
+                "󰖀",
+                "󰕾"
+            ]
         },
     },
-
     "network": {
         "format": "{ifname}",
         "format-wifi": "{icon}   {essid}",
         "format-ethernet": "󰈀   {ipaddr}/{cidr}",
         "format-disconnected": "󰤭   disconnected",
         "max-length": 50,
-        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ]
     },
-
     "hyprland/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
@@ -64,10 +93,66 @@
         "format": "󱂬 {title}",
         "separate-outputs": true,
         "max-length": 75,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "🌎 $1"
+        },
     },
     "backlight": {
         "device": "",
         "format": "{icon}   {percent}%",
-        "format-icons": ["󰃞", "󰃟", "󰃠"]
-    }
+        "format-icons": [
+            "󰃞",
+            "󰃟",
+            "󰃠"
+        ]
+    },
+    "mpris": {
+        "format": "{player_icon} {title} - {artist}",
+        "format-paused": "{status_icon} <i>{title} - {artist}</i>",
+        "player-icons": {
+            "default": "▶",
+            "cmus": "🎵"
+        },
+        "max-length": "20",
+        "dynamic-len": "35",
+        "status-icons": {
+            "paused": "⏸"
+        },
+        "ignored-players": [
+            "firefox"
+        ]
+    },
+    "cava": {
+        // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+        "framerate": 120,
+        "autosens": 1,
+        // "sensitivity": 0.75,
+        "bars": 18,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "hide_on_silence": true,
+        // "format_silent": "quiet",
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": true,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons": [
+            "▁",
+            "▂",
+            "▃",
+            "▄",
+            "▅",
+            "▆",
+            "▇",
+            "█"
+        ],
+        "actions": {
+            "on-click-right": "mode"
+        }
+    },
 }
