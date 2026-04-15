@@ -10,7 +10,7 @@
         "hyprland/window"
     ],
     "modules-right": [
-        "cava",
+        "custom/updates",
         "pulseaudio",
         "battery",
         "network",
@@ -122,37 +122,12 @@
             "firefox"
         ]
     },
-    "cava": {
-        // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
-        "framerate": 120,
-        "autosens": 1,
-        // "sensitivity": 0.75,
-        "bars": 18,
-        "lower_cutoff_freq": 50,
-        "higher_cutoff_freq": 10000,
-        "hide_on_silence": true,
-        // "format_silent": "quiet",
-        "method": "pulse",
-        "source": "auto",
-        "stereo": true,
-        "reverse": false,
-        "bar_delimiter": 0,
-        "monstercat": true,
-        "waves": false,
-        "noise_reduction": 0.77,
-        "input_delay": 2,
-        "format-icons": [
-            "▁",
-            "▂",
-            "▃",
-            "▄",
-            "▅",
-            "▆",
-            "▇",
-            "█"
-        ],
-        "actions": {
-            "on-click-right": "mode"
-        }
+    "custom/updates": {
+        "format": "Updates: {}",
+        "interval": 3600,
+        "exec": "~/.config/waybar/scripts/updates.sh",
+        "return-type": "json",
+        "on-click": "kitty --class waybar_update -e sh -c 'yay; sudo flatpak update; echo \"Press enter to exit.\"; read'",
+        "signal": 8
     },
 }
