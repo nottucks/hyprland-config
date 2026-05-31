@@ -114,12 +114,14 @@
             "cmus": "🎵"
         },
         "max-length": "20",
-        "dynamic-len": "35",
         "status-icons": {
             "paused": "⏸"
         },
         "ignored-players": [
-            "firefox"
+            "firefox",
+            "chromium",
+            "brave",
+            "discord"
         ]
     },
     "custom/updates": {

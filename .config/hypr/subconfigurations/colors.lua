@@ -1,0 +1,105 @@
+local colors = {
+
+    background = "1a1110",
+
+    error = "ffb4ab",
+
+    error_container = "93000a",
+
+    inverse_on_surface = "392e2d",
+
+    inverse_primary = "904a45",
+
+    inverse_surface = "f1dedc",
+
+    on_background = "f1dedc",
+
+    on_error = "690005",
+
+    on_error_container = "ffdad6",
+
+    on_primary = "571e1b",
+
+    on_primary_container = "ffdad6",
+
+    on_primary_fixed = "3b0908",
+
+    on_primary_fixed_variant = "73332f",
+
+    on_secondary = "442927",
+
+    on_secondary_container = "ffdad6",
+
+    on_secondary_fixed = "2c1513",
+
+    on_secondary_fixed_variant = "5d3f3c",
+
+    on_surface = "f1dedc",
+
+    on_surface_variant = "d8c2bf",
+
+    on_tertiary = "402d04",
+
+    on_tertiary_container = "fedea6",
+
+    on_tertiary_fixed = "261900",
+
+    on_tertiary_fixed_variant = "584419",
+
+    outline = "a08c8a",
+
+    outline_variant = "534342",
+
+    primary = "ffb3ac",
+
+    primary_container = "73332f",
+
+    primary_fixed = "ffdad6",
+
+    primary_fixed_dim = "ffb3ac",
+
+    scrim = "000000",
+
+    secondary = "e7bdb8",
+
+    secondary_container = "5d3f3c",
+
+    secondary_fixed = "ffdad6",
+
+    secondary_fixed_dim = "e7bdb8",
+
+    shadow = "000000",
+
+    source_color = "841517",
+
+    surface = "1a1110",
+
+    surface_bright = "423735",
+
+    surface_container = "271d1c",
+
+    surface_container_high = "322827",
+
+    surface_container_highest = "3d3231",
+
+    surface_container_low = "231918",
+
+    surface_container_lowest = "140c0b",
+
+    surface_dim = "1a1110",
+
+    surface_tint = "ffb3ac",
+
+    surface_variant = "534342",
+
+    tertiary = "e1c38c",
+
+    tertiary_container = "584419",
+
+    tertiary_fixed = "fedea6",
+
+    tertiary_fixed_dim = "e1c38c",
+
+}
+
+return colors
