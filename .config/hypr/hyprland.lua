@@ -42,7 +42,7 @@ hl.monitor({
     mode = "1920x1080@60",
     position = "auto-right",
     scale = "1",
-    mirror = "eDP-1",
+--     mirror = "eDP-1",
 })
 
 hl.monitor({
@@ -55,18 +55,21 @@ hl.monitor({
 -- workspaces
 
 -- main laptop monitor
-hl.workspace_rule({
-    workspace = "[1-4]",
-    monitor = "desc:Samsung Display Corp. 0x4188",
-    default = true,
-})
+for i = 1, 4 do
+    hl.workspace_rule({
+        workspace = tostring(i),
+        monitor = "desc:Samsung Display Corp. 0x4188",
+        default = (i == 1)
+    })
+end
 
 -- any extra monitors
-hl.workspace_rule({
-    workspace = "[5-9]",
-    monitor = "^(DP-.*|HDMI-A-1)$",
-    default = true,
-})
+for i = 5, 9 do
+    hl.workspace_rule({
+        workspace = tostring(i) .. " m[regex:^(DP-.*|HDMI-A-1)$]",
+        default = (i == 5)
+    })
+end
 
 --################
 --## AUTOSTART ###
@@ -111,7 +114,7 @@ local home = os.getenv("HOME")
 
 hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + SHIFT + Q", hl.dsp.exec_cmd("hyprctl activewindow | grep pid | tr -d 'pid:' | xargs kill"))
-hl.bind("SUPER + SHIFT + backslash", hl.dsp.exec_cmd("~/.config/hypr/subconfigurations/killhypr.sh"))
+hl.bind("SUPER + SHIFT + backslash", hl.dsp.exec_cmd("hyprshutdown"))
 hl.bind("SUPER + backslash", hl.dsp.exec_cmd("pidof hyprlock || hyprlock"))
 hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 hl.bind("SUPER + M", hl.dsp.window.fullscreen({ mode = "maximized" }))

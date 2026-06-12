@@ -4,17 +4,18 @@
     "modules-left": [
         "clock",
         "hyprland/workspaces",
-        "mpris"
+        "mpris",
     ],
     "modules-center": [
-        "hyprland/window"
+        "hyprland/window",
     ],
     "modules-right": [
         "custom/updates",
+        "tray",
         "pulseaudio",
         "battery",
         "network",
-        "backlight"
+        "backlight",
     ],
     "battery": {
         "format": "{icon}  {capacity}%",
@@ -113,23 +114,24 @@
             "default": "▶",
             "cmus": "🎵"
         },
-        "max-length": "20",
+        "max-length": 35,
         "status-icons": {
             "paused": "⏸"
         },
         "ignored-players": [
-            "firefox",
-            "chromium",
-            "brave",
             "discord"
         ]
     },
-    "custom/updates": {
-        "format": "Updates: {}",
+   "custom/updates": {
+        "format": "{}",
         "interval": 3600,
         "exec": "~/.config/waybar/scripts/updates.sh",
         "return-type": "json",
-        "on-click": "kitty --class waybar_update -e sh -c 'yay; sudo flatpak update; echo \"Press enter to exit.\"; read'",
+        "on-click": "kitty --class waybar_update -e sh -c 'trap \"rm -f /tmp/waybar-update-cache.json; pkill -RTMIN+8 waybar\" EXIT; yay; sudo flatpak update; echo \"Press enter to exit.\"; read'",
         "signal": 8
+    },
+    "tray": {
+        "icon-size": 17,
+        "spacing": 8
     },
 }
