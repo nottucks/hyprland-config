@@ -4,10 +4,11 @@
     "modules-left": [
         "clock",
         "hyprland/workspaces",
-        "mpris",
+        "idle_inhibitor",
+        "mpris"
     ],
     "modules-center": [
-        "hyprland/window",
+        "hyprland/window"
     ],
     "modules-right": [
         "custom/updates",
@@ -15,7 +16,7 @@
         "pulseaudio",
         "battery",
         "network",
-        "backlight",
+        "backlight"
     ],
     "battery": {
         "format": "{icon}  {capacity}%",
@@ -34,7 +35,6 @@
         ],
     },
     "clock": {
-        // "format": "󰥔   {:%I:%M %p}",
         "format": "󰥔   {:%a, %b %d - %I:%M %p}",
     },
     "pulseaudio": {
@@ -119,19 +119,40 @@
             "paused": "⏸"
         },
         "ignored-players": [
-            "discord"
+            "discord",
+            "firefox"
         ]
     },
-   "custom/updates": {
+"custom/updates": {
         "format": "{}",
         "interval": 3600,
-        "exec": "~/.config/waybar/scripts/updates.sh",
+        "exec": "$HOME/.config/waybar/scripts/check_updates.sh",
         "return-type": "json",
-        "on-click": "kitty --class waybar_update -e sh -c 'trap \"rm -f /tmp/waybar-update-cache.json; pkill -RTMIN+8 waybar\" EXIT; yay; sudo flatpak update; echo \"Press enter to exit.\"; read'",
+        "on-click": "kitty --class waybar_update -e sh -c $HOME/.config/waybar/scripts/update.sh",
         "signal": 8
     },
     "tray": {
         "icon-size": 17,
         "spacing": 8
     },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+        "activated": "",
+        "deactivated": ""
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+        },
+        "on-scroll-up": "true",
+        "on-scroll-down": "true"
+        },
+    }
 }

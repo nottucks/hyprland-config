@@ -9,11 +9,11 @@ else
     cache_age=0
 fi
 
-if (( now - cache_age > 1800 )); then
+if [ ! -f "$cache_file" ] || (( now - cache_age > 1800 )); then
     arch_updates=$(checkupdates 2>/dev/null)
     arch=$(echo "$arch_updates" | grep -v '^$' | wc -l)
 
-    aur_updates=$(yay -Qu 2>/dev/null)
+    aur_updates=$(yay -Qua 2>/dev/null)
     aur=$(echo "$aur_updates" | grep -v '^$' | wc -l)
 
     flatpak_updates=$(flatpak remote-ls --updates --columns=ref 2>/dev/null)
