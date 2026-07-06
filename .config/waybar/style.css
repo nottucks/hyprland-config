@@ -3,7 +3,7 @@
 * {
     font-family: 'JetBrainsMono Nerd Font Propo', 'SF Pro Text', sans-serif;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 12px;
     margin-top: 0px;
     margin-bottom: 0px;
 }
@@ -86,7 +86,8 @@ window#waybar.empty #window {
 }
 
 #idle_inhibitor {
-    background-color: @surface_container_low;
+    color: @primary;
+    background-color: @surface_container_high;
     border-radius: 10px;
     margin: 1px 2px;
     padding: 0px;
@@ -94,15 +95,26 @@ window#waybar.empty #window {
     min-height: 18px;
 }
 
+#idle_inhibitor.activated {
+    color: @on_primary_container;
+    background-color: @primary_container;
+}
+
+#idle_inhibitor.deactivated {
+    color: @on_surface_variant;
+    background-color: @surface_container_high;
+}
+
 #taskbar {
-    background-color: @surface_container_low;
+    background-color: @surface_variant;
     margin: 1px 2px;
     padding: 0px;
     border-radius: 10px;
 }
 
 #tray {
-    background-color: @surface_container_low;
+    color: @on_primary_container;
+    background-color: @primary_container;
     margin: 1px 2px;
     padding: 0px 6px;
     border-radius: 10px;

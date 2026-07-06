@@ -10,7 +10,7 @@ hl.monitor({
     output = "eDP-1",
     mode = "preferred",
     position = "0x0",
-    scale = "1",
+    scale = "1.1222",
 --     bitdepth = 10,
 --     cm = "auto",
 --     sdr_min_luminance = 0,
@@ -94,8 +94,9 @@ hl.bind("SUPER + T", hl.dsp.window.float({ action = "toggle" }))
 
 hl.bind("SUPER + K", hl.dsp.layout("swapsplit"))
 hl.bind("SUPER + J", hl.dsp.layout("togglesplit"))
-hl.bind("ALT + Tab", hl.dsp.window.cycle_next(""), { repeating = true })
+hl.bind("ALT + Tab", hl.dsp.window.cycle_next(), { repeating = true })
 hl.bind("ALT + Tab", hl.dsp.window.bring_to_top(), { repeating = true })
+
 
 hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
 hl.bind("SUPER + RETURN", hl.dsp.exec_cmd(terminal))
@@ -158,6 +159,27 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
+-- scaling binds, wish i didnt have to do this
+
+-- Scale to 1
+hl.bind("SUPER + bracketright", function()
+hl.monitor({
+    output = "eDP-1",
+    mode = "preferred",
+    position = "auto",
+    scale = 1
+})
+end)
+
+-- Scale to 1.12 (For whatever key you want to use to go back, e.g., bracketleft)
+hl.bind("SUPER + bracketleft", function()
+hl.monitor({
+    output = "eDP-1",
+    mode = "preferred",
+    position = "auto",
+    scale = 1.1222
+})
+end)
 -- ##############################
 -- ### WINDOWS AND WORKSPACES ###
 -- ##############################
@@ -290,7 +312,7 @@ hl.config({
     },
     -- https://wiki.hypr.land/Configuring/Variables/#animations
     animations = {
-        enabled = false,
+        enabled = yes,
     },
     -- See https://wiki.hypr.land/Configuring/Dwindle-Layout/ for more
     dwindle = {
@@ -331,11 +353,22 @@ hl.config({
         hide_on_key_press = true,
         no_hardware_cursors = false,
     },
-    --##################
-    --##  KEYWORDS   ###
-    --##################
-    -- See https://wiki.hypr.land/Configuring/Keywords/
 })
+--##################
+--## ANIMS ##
+--##################
+
+hl.curve("spring", { type = "spring", mass = 1, stiffness = 220, dampening = 26 })
+hl.curve("exit_spring", { type = "spring", mass = 1, stiffness = 550, dampening = 45 })
+hl.curve("instant_spring", { type = "spring", mass = 1, stiffness = 1200, dampening = 60 })
+
+hl.animation({ leaf = "windows", enabled = true, speed = 10, spring = "spring", style = "popin 75%" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 10, spring = "spring", style = "slide" })
+hl.animation({ leaf = "fadeOut", enabled = true, speed = 14, spring = "exit_spring" })
+hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 14, spring = "exit_spring" })
+hl.animation({ leaf = "fadeIn", enabled = true, speed = 20, spring = "instant_spring" })
+hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 20, spring = "instant_spring" })
+
 
 hl.on("hyprland.start", function ()
     hl.exec_cmd("waypaper --restore")
