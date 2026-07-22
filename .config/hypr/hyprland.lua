@@ -358,16 +358,16 @@ hl.config({
 --## ANIMS ##
 --##################
 
-hl.curve("spring", { type = "spring", mass = 1, stiffness = 220, dampening = 26 })
-hl.curve("exit_spring", { type = "spring", mass = 1, stiffness = 550, dampening = 45 })
-hl.curve("instant_spring", { type = "spring", mass = 1, stiffness = 1200, dampening = 60 })
+hl.curve("spring", { type = "spring", mass = 1, stiffness = 500, dampening = 40 })
+hl.curve("exit_spring", { type = "spring", mass = 1, stiffness = 900, dampening = 55 })
+hl.curve("instant_spring", { type = "spring", mass = 1, stiffness = 1600, dampening = 80 })
 
-hl.animation({ leaf = "windows", enabled = true, speed = 10, spring = "spring", style = "popin 75%" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 10, spring = "spring", style = "slide" })
-hl.animation({ leaf = "fadeOut", enabled = true, speed = 14, spring = "exit_spring" })
-hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 14, spring = "exit_spring" })
-hl.animation({ leaf = "fadeIn", enabled = true, speed = 20, spring = "instant_spring" })
-hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 20, spring = "instant_spring" })
+hl.animation({ leaf = "windows", enabled = true, speed = 3, spring = "spring", style = "popin 85%" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 3.5, spring = "spring", style = "slide" })
+hl.animation({ leaf = "fadeOut", enabled = true, speed = 2.5, spring = "exit_spring" })
+hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 2.5, spring = "exit_spring" })
+hl.animation({ leaf = "fadeIn", enabled = true, speed = 2, spring = "instant_spring" })
+hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 2, spring = "instant_spring" })
 
 
 hl.on("hyprland.start", function ()
