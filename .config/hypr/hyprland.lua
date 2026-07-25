@@ -270,10 +270,7 @@ hl.config({
         force_zero_scaling = true,
     },
     render = {
-        direct_scanout = 1,
-        cm_enabled = true,
-        cm_auto_hdr = 1,
---         cm_sdr_eotf = "gamma22",
+        direct_scanout = 0,
     },
     --####################
     --## LOOK AND FEEL ###
@@ -358,9 +355,9 @@ hl.config({
 --## ANIMS ##
 --##################
 
-hl.curve("spring", { type = "spring", mass = 1, stiffness = 500, dampening = 40 })
-hl.curve("exit_spring", { type = "spring", mass = 1, stiffness = 900, dampening = 55 })
-hl.curve("instant_spring", { type = "spring", mass = 1, stiffness = 1600, dampening = 80 })
+hl.curve("spring", { type = "spring", mass = 1, stiffness = 640, dampening = 46 })
+hl.curve("exit_spring", { type = "spring", mass = 1, stiffness = 1250, dampening = 64 })
+hl.curve("instant_spring", { type = "spring", mass = 1, stiffness = 1000, dampening = 60 })
 
 hl.animation({ leaf = "windows", enabled = true, speed = 3, spring = "spring", style = "popin 85%" })
 hl.animation({ leaf = "workspaces", enabled = true, speed = 3.5, spring = "spring", style = "slide" })
